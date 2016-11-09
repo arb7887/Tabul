@@ -4,7 +4,9 @@ using System.Collections;
 [RequireComponent(typeof(ColorController))]
 public class PlayerColorController : MonoBehaviour {
 
+    public GameController gameController;
     private ColorController colorControls;
+    
 
 	// Use this for initialization
 	void Start ()
@@ -27,6 +29,13 @@ public class PlayerColorController : MonoBehaviour {
         if(c.gameObject.tag == "bounds")
         {
             // Reset the players spot
+            gameController.Lose();
+        }
+
+        if(c.gameObject.tag == "winner")
+        {
+            // The player has won!
+            gameController.Win();
         }
     }
 

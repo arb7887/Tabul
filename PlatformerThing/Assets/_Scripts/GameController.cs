@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour {
     #region Fields
 
     public Text timerText;          // The UI element for the timer
-    public Transform spawnPoint;    // The spawn point of the player
+    public Transform player1Spawn;  // The spawn point of the player
+    public Transform player2Spawn;  //
     public int numWinBlocks = 1;    // How many win blocks are there?
 
     private float timePassed = 0f;  // How much time has passed
@@ -78,11 +79,20 @@ public class GameController : MonoBehaviour {
     /// Author: Ben hoffman
     /// Purpose of method: To set teh player back at the spawn point
     /// </summary>
-    public void Lose()
+    public void Lose(GameObject player)
     {
-        // Spawn the player at the spawn point
-        player.transform.position = spawnPoint.position;
-        player.transform.rotation = spawnPoint.rotation;
+        if(player.tag == "Player")
+        {
+            // Spawn the player at the spawn point
+            player.transform.position = player1Spawn.position;
+            player.transform.rotation = player1Spawn.rotation;
+        }
+        else if(player.tag == "Player2")
+        {
+            player.transform.position = player2Spawn.position;
+            player.transform.rotation = player2Spawn.rotation;
+        }
+
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 

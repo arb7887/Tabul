@@ -29,13 +29,12 @@ public class PlayerColorController : MonoBehaviour {
         if(c.gameObject.tag == "bounds")
         {
             // Reset the players spot
-            gameController.Lose();
+            gameController.Lose(gameObject);
         }
 
         if(c.gameObject.tag == "winner")
         {
-            // The player has won!
-            
+            // The player has won!          
             gameController.HitWinBlock();
             Destroy(c.gameObject);
         }

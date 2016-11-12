@@ -7,6 +7,7 @@ TagManager:
   - changer
   - bounds
   - winner
+  - Player2
   layers:
   - Default
   - TransparentFX

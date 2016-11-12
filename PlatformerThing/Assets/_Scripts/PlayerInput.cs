@@ -25,18 +25,39 @@ public class PlayerInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        targetSpeed = Input.GetAxisRaw("Horizontal") * speed;
+        if(tag == "Player2")
+        {
+            targetSpeed = Player2Input();
+        }
+        else
+        {
+            targetSpeed = Player1Input();
+        }
+
         currentSpeed = IncrementTowards(currentSpeed, targetSpeed, acceleration);
 
         ammountToMove = new Vector2(currentSpeed, 0f);
         playerPhysics.Move(ammountToMove * Time.deltaTime);
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump") && tag == "Player")
+        {
+            playerPhysics.Jump();
+        }
+        else if(Input.GetButtonDown("Jump2") && tag == "Player2")
         {
             playerPhysics.Jump();
         }
 	}
 
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To calculate the acceleration for
+    /// the player
+    /// </summary>
+    /// <param name="n">Current speed</param>
+    /// <param name="target">target speed</param>
+    /// <param name="accel"></param>
+    /// <returns></returns>
     private float IncrementTowards(float n, float target, float accel)
     {
         if(n == target)
@@ -49,5 +70,25 @@ public class PlayerInput : MonoBehaviour {
             n += accel * Time.deltaTime * dir;
             return (dir == Mathf.Sign(target - n)) ? n : target;
         }
+    }
+
+
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To get input for the first player
+    /// </summary>
+    private float Player1Input()
+    {
+        return Input.GetAxisRaw("Horizontal") * speed;
+
+    }
+
+    /// <summary>
+    /// Author: Ben hoffman
+    /// Purpose of method: To get the input from the second player
+    /// </summary>
+    private float Player2Input()
+    {
+        return Input.GetAxisRaw("Horizontal2") * speed;
     }
 }

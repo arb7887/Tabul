@@ -43,6 +43,7 @@ public class FlashingGround : MonoBehaviour {
         {
             // change the color
             ChangeColor();
+            timeSinceLastSwitch = 0f;
         }
         else
         {
@@ -57,11 +58,12 @@ public class FlashingGround : MonoBehaviour {
     private void ChangeColor()
     {
         currentColor++;
-        if(currentColor > possibleColors.Length)
+
+        if(currentColor > possibleColors.Length - 1)
         {
             currentColor = 0;
         }
 
-        colorController.ChangeColor(possibleColors[0]);
+        colorController.ChangeColor(possibleColors[currentColor]);
     }
 }

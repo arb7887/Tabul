@@ -11,6 +11,8 @@ GameObject:
   - 33: {fileID: 3332736}
   - 65: {fileID: 6547884}
   - 23: {fileID: 2340844}
+  - 114: {fileID: 11435446}
+  - 114: {fileID: 11456372}
   m_Layer: 0
   m_Name: flashingGround
   m_TagString: Untagged
@@ -75,6 +77,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11435446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d59aa5ed57ed4448b8b3371c56a0934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashSpeed: 3
+  possibleColors: 0000000001000000
+--- !u!114 &11456372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91bab47ed85b63409f694d871c6d145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  red: {fileID: 2100000, guid: 623db89572938d64f9aeab5b3b6a3373, type: 2}
+  black: {fileID: 2100000, guid: 9125401ad6ec1174fb4849f0a10e1325, type: 2}
+  white: {fileID: 2100000, guid: 9fcff42680c4c8947b6b06b2b17d880d, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -38,6 +38,17 @@ public class PlayerColorController : MonoBehaviour {
             gameController.HitWinBlock();
             Destroy(c.gameObject);
         }
+        if(c.gameObject.tag == "doorSwitch")
+        {
+            c.gameObject.GetComponent<DoorController>().active = true;
+        }
     }
 
+    void OnCollisionExit(Collision c)
+    {
+        if(c.gameObject.tag == "doorSwitch")
+        {
+            c.gameObject.GetComponent<DoorController>().active = false;
+        }
+    }
 }

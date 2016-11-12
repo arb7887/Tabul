@@ -8,6 +8,7 @@ TagManager:
   - bounds
   - winner
   - Player2
+  - doorSwitch
   layers:
   - Default
   - TransparentFX

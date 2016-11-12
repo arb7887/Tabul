@@ -4,15 +4,20 @@ using UnityEngine.UI;
 
 public class MenuControlls : MainMenu {
 
+    #region Fields
     public Button resumeButton;
     public Button menuButton;
     public Button quitButton;
+    public Text gameOverText;
 
     private bool paused;
 
-	// Use this for initialization
-	void Start ()
+    #endregion
+
+    // Use this for initialization
+    void Start ()
     {
+        gameOverText.text = "";
         HidePauseUI();
         Time.timeScale = 1f;
     }
@@ -56,6 +61,7 @@ public class MenuControlls : MainMenu {
     /// </summary>
     public void ShowGameOverUI()
     {
+        gameOverText.text = "Finished!";
         ShowPauseUI();
     }
 
@@ -82,5 +88,16 @@ public class MenuControlls : MainMenu {
         menuButton.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To return either 0,1,2,3 
+    /// depending on how long it took the player to complete
+    /// the level
+    /// </summary>
+    /// <param name="time"></param>
+    public void CalculateScore(float time, float threeStarSeed)
+    {
+
+    }
 
 }

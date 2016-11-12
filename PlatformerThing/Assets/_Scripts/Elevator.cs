@@ -30,15 +30,16 @@ public class Elevator : MonoBehaviour {
     {
         // If we are at the start height, or less then the start height + the range,
         // then move up.
-        if (transform.position.y > startPosition.y + rangeY || transform.position.y <= startPosition.y - 0.5f)
+        if (transform.position.y >= startPosition.y + rangeY || transform.position.y <= startPosition.y - 0.5f)
         {
             speedY *= -1;
         }
+
         transform.Translate(Vector3.up * speedY * Time.deltaTime);
         // Same thing as this  
         /*position.y += speedY * Time.deltaTime;
         transform.position = position;*/
-        if (transform.position.x > startPosition.x + rangeX  || transform.position.x <= startPosition.x - 0.5f)
+        if (transform.position.x >= startPosition.x + rangeX || transform.position.x <= startPosition.x - 0.5f)
         {
             speedX *= -1;
         }

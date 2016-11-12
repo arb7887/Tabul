@@ -88,16 +88,4 @@ public class MenuControlls : MainMenu {
         menuButton.gameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// Author: Ben Hoffman
-    /// Purpose of method: To return either 0,1,2,3 
-    /// depending on how long it took the player to complete
-    /// the level
-    /// </summary>
-    /// <param name="time"></param>
-    public void CalculateScore(float time, float threeStarSeed)
-    {
-
-    }
-
 }

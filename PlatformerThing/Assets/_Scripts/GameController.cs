@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class GameController : MonoBehaviour {
 
@@ -25,7 +26,8 @@ public class GameController : MonoBehaviour {
 	void Update ()
     {
         timePassed += Time.deltaTime;
-        timerText.text = timePassed.ToString();
+        
+        timerText.text = (Math.Truncate(10 * timePassed) / 10).ToString();
 	}
 
     /// <summary>

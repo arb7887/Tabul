@@ -5,15 +5,27 @@ using System;
 
 public class GameController : MonoBehaviour {
 
-    public Text timerText;
-    public Transform spawnPoint;
+    #region Fields
 
-    private float timePassed = 0f;
-    private GameObject player;
+    public Text timerText;          // The UI element for the timer
+    public Transform spawnPoint;    // The spawn point of the player
+    public int numWinBlocks = 1;    // How many win blocks are there?
 
-	// Use this for initialization
-	void Start ()
+    private float timePassed = 0f;  // How much time has passed
+    private GameObject player;      // A reference to the player so that we can move them
+    public int currentWinBlocks;    // The current number of winning blocks left
+    private bool gameOver;          // Is the game over? 
+    private MenuControlls menuController;
+
+    #endregion
+
+    // Use this for initialization
+    void Start ()
     {
+        menuController = GameObject.FindObjectOfType<MenuControlls>();
+
+        currentWinBlocks = numWinBlocks;
+
         // Get the player gameobject
         player = GameObject.FindGameObjectWithTag("Player");
         if(player == null)
@@ -25,10 +37,12 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        timePassed += Time.deltaTime;
-        
-        timerText.text = (Math.Truncate(10 * timePassed) / 10).ToString();
-	}
+        if (!gameOver)
+        {
+            timePassed += Time.deltaTime;
+            timerText.text = (Math.Truncate(10 * timePassed) / 10).ToString();
+        }
+    }
 
     /// <summary>
     /// Author: Ben Hoffman
@@ -38,9 +52,25 @@ public class GameController : MonoBehaviour {
     /// </summary>
     public void Win()
     {
-        Debug.Log("Winner!");
-        // Update the UI 
-        // Give the player a score
+        gameOver = true;
+        menuController.ShowGameOverUI();
+    }
+
+
+
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To itterate down on the number
+    /// of winning blocks, and if it less then 0 then call win
+    /// </summary>
+   public void HitWinBlock()
+    {
+        currentWinBlocks--;
+
+        if(currentWinBlocks <= 0)
+        {
+            Win();
+        }
     }
 
     /// <summary>
@@ -55,21 +85,6 @@ public class GameController : MonoBehaviour {
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
-    /// <summary>
-    /// Author: Ben Hoffman
-    /// Purpose of method: To re-load the current level
-    /// </summary>
-    public void Restart()
-    {
-        Application.LoadLevel(Application.loadedLevel);
-    }
 
-    /// <summary>
-    /// Author: Ben Hoffman
-    /// purpose of method: To load the main menu level
-    /// </summary>
-    public void MainMenu()
-    {
-        // Load the main menu level
-    }
+    
 }

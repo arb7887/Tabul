@@ -35,7 +35,9 @@ public class PlayerColorController : MonoBehaviour {
         if(c.gameObject.tag == "winner")
         {
             // The player has won!
-            gameController.Win();
+            
+            gameController.HitWinBlock();
+            Destroy(c.gameObject);
         }
     }
 

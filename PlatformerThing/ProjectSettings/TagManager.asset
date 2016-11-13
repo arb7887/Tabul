@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - changer
-  - bounds
-  - winner
-  - Player2
-<<<<<<< HEAD
-  - teleporter
-  - colorWall
-  - ground
-=======
-  - doorSwitch
->>>>>>> refs/remotes/origin/master
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -24,16 +13,16 @@ TagManager:
   - UI
   - 
   - 
-  - red
-  - white
-  - black
-  - blackWin
-  - whiteWin
-  - redWin
   - 
-  - blackTele
-  - whiteTele
-  - redTele
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

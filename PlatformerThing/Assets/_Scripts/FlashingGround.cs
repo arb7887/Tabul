@@ -10,7 +10,7 @@ public class FlashingGround : MonoBehaviour {
 
     #region Fields
     public float flashSpeed;
-    public ColorController.Color[] possibleColors;    
+    public ColorController.ColorEnum[] possibleColors;    
 
     private int currentColor = 0;
     private float timeSinceLastSwitch;

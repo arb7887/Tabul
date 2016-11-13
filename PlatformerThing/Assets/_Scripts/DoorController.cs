@@ -6,6 +6,7 @@ public class DoorController : MonoBehaviour
     public GameObject door;
     public bool active;
     public bool up;
+    public float distance;
     public Vector3 startPos;
     public Vector3 endPos;
     private Vector3 velocity;
@@ -14,7 +15,7 @@ public class DoorController : MonoBehaviour
 	void Start ()
     {
         startPos = door.transform.position;
-        endPos = new Vector3(startPos.x, startPos.y + 1.0f, 0.0f);
+        endPos = new Vector3(startPos.x, startPos.y + distance, 0.0f);
         velocity = new Vector3(0.0f, .4f, 0.0f);
 	}
 	

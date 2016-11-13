@@ -4,7 +4,7 @@ using System.Collections;
 public class StationaryNumbers : MonoBehaviour {
 
     public GameObject number;
-    public ColorController.Color color;
+    public ColorController.ColorEnum color;
 	// Use this for initialization
 	void Start ()
     {
@@ -19,13 +19,13 @@ public class StationaryNumbers : MonoBehaviour {
         number.transform.rotation = Quaternion.identity;
         switch(color)
         {
-            case ColorController.Color.red:
+            case ColorController.ColorEnum.red:
                 number.GetComponent<SpriteRenderer>().color = Color.red;
                 break;
-            case ColorController.Color.black:
+            case ColorController.ColorEnum.black:
                 number.GetComponent<SpriteRenderer>().color = Color.black;
                 break;
-            case ColorController.Color.white:
+            case ColorController.ColorEnum.white:
                 number.GetComponent<SpriteRenderer>().color = Color.white;
                 break;
         }

@@ -52,11 +52,17 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -70,11 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\ColorController.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Assets\_Scripts\DoorController.cs" />
     <Compile Include="Assets\_Scripts\DoorSwitchActivator.cs" />
->>>>>>> refs/remotes/origin/master
     <Compile Include="Assets\_Scripts\Elevator.cs" />
     <Compile Include="Assets\_Scripts\FlashingGround.cs" />
     <Compile Include="Assets\_Scripts\GameController.cs" />
@@ -82,10 +85,7 @@
     <Compile Include="Assets\_Scripts\PlayerInput.cs" />
     <Compile Include="Assets\_Scripts\PlayerPhysics.cs" />
     <Compile Include="Assets\_Scripts\StationaryNumbers.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\_Scripts\Teleporter.cs" />
-=======
->>>>>>> refs/remotes/origin/master
     <Compile Include="Assets\_Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\_Scripts\UI\MenuControlls.cs" />
   </ItemGroup>

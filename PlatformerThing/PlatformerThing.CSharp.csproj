@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\ColorController.cs" />
     <Compile Include="Assets\_Scripts\DoorController.cs" />
+    <Compile Include="Assets\_Scripts\DoorSwitchActivator.cs" />
     <Compile Include="Assets\_Scripts\Elevator.cs" />
     <Compile Include="Assets\_Scripts\FlashingGround.cs" />
     <Compile Include="Assets\_Scripts\GameController.cs" />

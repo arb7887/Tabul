@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340e28d73b83b724882e6e600391a89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  timerText: {fileID: 11435416, guid: 3811adb1c69cfb14eacfc9275d450a7f, type: 2}
   player1Spawn: {fileID: 0}
   player2Spawn: {fileID: 0}
   numWinBlocks: 2
@@ -85,21 +85,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebd217eb844caf48b0842b8bd8eb3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resumeButton: {fileID: 0}
-  menuButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  gameOverText: {fileID: 0}
+  resumeButton: {fileID: 11493324, guid: 3811adb1c69cfb14eacfc9275d450a7f, type: 2}
+  menuButton: {fileID: 11421592, guid: 3811adb1c69cfb14eacfc9275d450a7f, type: 2}
+  quitButton: {fileID: 11489090, guid: 3811adb1c69cfb14eacfc9275d450a7f, type: 2}
+  gameOverText: {fileID: 11481682, guid: 3811adb1c69cfb14eacfc9275d450a7f, type: 2}
   stars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 127314, guid: fef3392e3ce2e5946a3da173cbecbbfd, type: 2}
+  - {fileID: 135484, guid: fef3392e3ce2e5946a3da173cbecbbfd, type: 2}
+  - {fileID: 190732, guid: fef3392e3ce2e5946a3da173cbecbbfd, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 11435416, guid: 3811adb1c69cfb14eacfc9275d450a7f,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 11493324, guid: 3811adb1c69cfb14eacfc9275d450a7f,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: menuButton
+      value: 
+      objectReference: {fileID: 11421592, guid: 3811adb1c69cfb14eacfc9275d450a7f,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 11489090, guid: 3811adb1c69cfb14eacfc9275d450a7f,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: gameOverText
+      value: 
+      objectReference: {fileID: 11481682, guid: 3811adb1c69cfb14eacfc9275d450a7f,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: stars.Array.data[0]
+      value: 
+      objectReference: {fileID: 127314, guid: fef3392e3ce2e5946a3da173cbecbbfd, type: 2}
+    - target: {fileID: 0}
+      propertyPath: stars.Array.data[1]
+      value: 
+      objectReference: {fileID: 135484, guid: fef3392e3ce2e5946a3da173cbecbbfd, type: 2}
+    - target: {fileID: 0}
+      propertyPath: stars.Array.data[2]
+      value: 
+      objectReference: {fileID: 190732, guid: fef3392e3ce2e5946a3da173cbecbbfd, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157960}

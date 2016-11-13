@@ -32,7 +32,7 @@ public class PlayerColorController : MonoBehaviour {
 
         // If the collision is with the death bounds, then make a short pause, and then show the menu
         // That gives the options to restart or go to the main menu
-        if (c.gameObject.tag == "bounds")
+        if (c.gameObject.tag == "bounds" || c.gameObject.tag == "triangleOfDoom")
         {
             // Reset the players spot
             gameController.Lose(gameObject);

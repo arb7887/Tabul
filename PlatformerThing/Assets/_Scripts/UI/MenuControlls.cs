@@ -66,7 +66,8 @@ public class MenuControlls : MainMenu {
     public void ShowGameOverUI()
     {
         gameOverText.text = "Finished!";
-        ShowPauseUI();
+        quitButton.gameObject.SetActive(true);
+        menuButton.gameObject.SetActive(true);
     }
 
     /// <summary>

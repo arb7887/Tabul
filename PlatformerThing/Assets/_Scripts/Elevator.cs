@@ -45,6 +45,5 @@ public class Elevator : MonoBehaviour {
         }
 
         transform.Translate(Vector3.right * speedX * Time.deltaTime);
-
     }
 }

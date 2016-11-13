@@ -8,9 +8,13 @@ TagManager:
   - bounds
   - winner
   - Player2
+<<<<<<< HEAD
   - teleporter
   - colorWall
   - ground
+=======
+  - doorSwitch
+>>>>>>> refs/remotes/origin/master
   layers:
   - Default
   - TransparentFX

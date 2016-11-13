@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour {
     public int numWinBlocks = 1;    // How many win blocks are there?
     public float threeStarTime = 60f;
 
+    
+
     private float timePassed = 0f;  // How much time has passed
     private GameObject player;      // A reference to the player so that we can move them
     public int currentWinBlocks;    // The current number of winning blocks left
@@ -57,6 +59,7 @@ public class GameController : MonoBehaviour {
     {
         gameOver = true;
         menuController.ShowGameOverUI();
+        menuController.DrawStars(CalculateScore());
         Debug.Log(CalculateScore());
     }
 

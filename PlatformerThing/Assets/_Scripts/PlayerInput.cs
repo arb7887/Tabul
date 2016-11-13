@@ -80,7 +80,6 @@ public class PlayerInput : MonoBehaviour {
     private float Player1Input()
     {
         return Input.GetAxisRaw("Horizontal") * speed;
-
     }
 
     /// <summary>

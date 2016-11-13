@@ -9,6 +9,7 @@ public class MenuControlls : MainMenu {
     public Button menuButton;
     public Button quitButton;
     public Text gameOverText;
+    public GameObject[] stars;
 
     private bool paused;
 
@@ -17,6 +18,11 @@ public class MenuControlls : MainMenu {
     // Use this for initialization
     void Start ()
     {
+        foreach (GameObject star in stars)
+        {
+            star.SetActive(false);
+        }
+
         gameOverText.text = "";
         HidePauseUI();
         Time.timeScale = 1f;
@@ -52,8 +58,6 @@ public class MenuControlls : MainMenu {
         }       
     }
 
-    
-
     /// <summary>
     /// Author: Ben Hoffman
     /// Purpose of method: To show the game over
@@ -86,6 +90,22 @@ public class MenuControlls : MainMenu {
         quitButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(false);
         menuButton.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To draw the stars for after you win
+    /// </summary>
+    /// <param name="numStars">The number of stars to draw</param>
+    public void DrawStars(int numStars)
+    {
+        if(stars != null)
+        {
+            for(int i = 0; i < numStars; i++)
+            {
+                stars[i].SetActive(true);
+            }
+        }
     }
 
 }

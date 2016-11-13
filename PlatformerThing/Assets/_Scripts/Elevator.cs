@@ -8,7 +8,7 @@ public class Elevator : MonoBehaviour {
     public float rangeY;             // How high it will go in the Y direction
     public float rangeX;             // How far we will go in the X direction
 
-    private Vector3 startPosition;  // This is the start position of the elevator
+    private Vector3 startPosition;   // This is the start position of the elevator
 
 	// Use this for initialization
 	void Start ()
@@ -17,7 +17,7 @@ public class Elevator : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         Move();
 	}
@@ -43,6 +43,7 @@ public class Elevator : MonoBehaviour {
         {
             speedX *= -1;
         }
+
         transform.Translate(Vector3.right * speedX * Time.deltaTime);
 
     }

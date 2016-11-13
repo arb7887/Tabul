@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82999992, y: 2.03999996, z: 1}
+  m_LocalPosition: {x: 6.67999983, y: 2.27999997, z: 1}
   m_LocalScale: {x: .226469949, y: .226469949, z: .226469949}
   m_Children:
   - {fileID: 488176}
@@ -285,7 +285,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .595588207, g: .58072871, b: .0569312088, a: 1}
   m_Intensity: 3.30999994
   m_Range: 4.13000011
   m_SpotAngle: 148
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91bab47ed85b63409f694d871c6d145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 2
+  color: 0
   red: {fileID: 2100000, guid: 623db89572938d64f9aeab5b3b6a3373, type: 2}
   black: {fileID: 2100000, guid: 9125401ad6ec1174fb4849f0a10e1325, type: 2}
   white: {fileID: 2100000, guid: 9fcff42680c4c8947b6b06b2b17d880d, type: 2}
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 1000
-  jumpTolerance: .5
+  jumpTolerance: .100000001
 --- !u!114 &11477452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,7 +408,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: jumpTolerance
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101142}

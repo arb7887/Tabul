@@ -8,6 +8,9 @@ TagManager:
   - bounds
   - winner
   - Player2
+  - teleporter
+  - colorWall
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -24,9 +27,9 @@ TagManager:
   - whiteWin
   - redWin
   - 
-  - 
-  - 
-  - 
+  - blackTele
+  - whiteTele
+  - redTele
   - 
   - 
   - 

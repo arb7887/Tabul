@@ -15,6 +15,12 @@ public class PlayerColorController : MonoBehaviour {
 	}
 	
 
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To check when I am colliding and 
+    /// what I am colliding with
+    /// </summary>
+    /// <param name="c"> What I am colliding with </param>
     void OnCollisionEnter(Collision c)
     {
         ColorController cColor = c.gameObject.GetComponent<ColorController>();
@@ -37,6 +43,11 @@ public class PlayerColorController : MonoBehaviour {
             // The player has won!          
             gameController.HitWinBlock();
             Destroy(c.gameObject);
+        }
+
+        if(c.gameObject.tag == "teleporter")
+        {
+            c.gameObject.GetComponent<Teleporter>().Teleport(gameObject);
         }
     }
 

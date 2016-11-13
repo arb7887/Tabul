@@ -9,6 +9,7 @@ public class PlayerPhysics : MonoBehaviour {
     private Rigidbody rb;
     private RaycastHit hit;
     private Vector3 position;
+    private Vector3 jumpCheck;
 
     void Start()
     {
@@ -36,8 +37,10 @@ public class PlayerPhysics : MonoBehaviour {
     /// </summary>
     public void Jump()
     {
-        // If I'm not in the air already, then jump        
-        if(Physics.Raycast(transform.position, Vector3.down, out hit, jumpTolerance))
+        // If I'm not in the air already, then jump 
+        jumpCheck = transform.position;
+        jumpCheck.y -= 0.1f;       
+        if(Physics.Raycast(jumpCheck, Vector3.down, jumpTolerance))
         {
             rb.AddForce(Vector3.up * jumpHeight);
         }

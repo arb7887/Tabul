@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour {
     public Transform player1Spawn;  // The spawn point of the player
     public Transform player2Spawn;  //
     public int numWinBlocks = 1;    // How many win blocks are there?
+    public float threeStarTime = 60f;
+
+    
 
     private float timePassed = 0f;  // How much time has passed
     private GameObject player;      // A reference to the player so that we can move them
@@ -56,6 +59,8 @@ public class GameController : MonoBehaviour {
     {
         gameOver = true;
         menuController.ShowGameOverUI();
+        menuController.DrawStars(CalculateScore());
+        Debug.Log(CalculateScore());
     }
 
 
@@ -96,6 +101,28 @@ public class GameController : MonoBehaviour {
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
+    /// <summary>
+    /// Author: Ben Hoffman
+    /// Purpose of method: To determine how many stars
+    /// the play has earned
+    /// </summary>
+    /// <returns></returns>
+    private int CalculateScore()
+    {
+        if(timePassed <= threeStarTime)
+        {
+            return 3;
+        }
+        else if(timePassed < threeStarTime + 0.3f * (threeStarTime))
+        {
+            return 2;
+        }
+        else if (timePassed < threeStarTime + 0.6f * (threeStarTime))
+        {
+            return 1;
+        }
 
+        return 0;
+    }
     
 }

@@ -9,6 +9,7 @@ public class MenuControlls : MainMenu {
     public Button menuButton;
     public Button quitButton;
     public Text gameOverText;
+    public GameObject[] stars;
 
     private bool paused;
 
@@ -17,6 +18,11 @@ public class MenuControlls : MainMenu {
     // Use this for initialization
     void Start ()
     {
+        foreach (GameObject star in stars)
+        {
+            star.SetActive(false);
+        }
+
         gameOverText.text = "";
         HidePauseUI();
         Time.timeScale = 1f;
@@ -51,8 +57,6 @@ public class MenuControlls : MainMenu {
             HidePauseUI();
         }       
     }
-
-    
 
     /// <summary>
     /// Author: Ben Hoffman
@@ -90,14 +94,18 @@ public class MenuControlls : MainMenu {
 
     /// <summary>
     /// Author: Ben Hoffman
-    /// Purpose of method: To return either 0,1,2,3 
-    /// depending on how long it took the player to complete
-    /// the level
+    /// Purpose of method: To draw the stars for after you win
     /// </summary>
-    /// <param name="time"></param>
-    public void CalculateScore(float time, float threeStarSeed)
+    /// <param name="numStars">The number of stars to draw</param>
+    public void DrawStars(int numStars)
     {
-
+        if(stars != null)
+        {
+            for(int i = 0; i < numStars; i++)
+            {
+                stars[i].SetActive(true);
+            }
+        }
     }
 
 }

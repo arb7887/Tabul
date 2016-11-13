@@ -24,7 +24,7 @@ public class ColorController: MonoBehaviour
     public void ChangeColor(Color changeToColor)
     {
         color = changeToColor;
-        if(tag != "winner")
+        if(tag == "colorWall" || tag == "Player" || tag =="Player2")
         {
             switch (color)
             {
@@ -46,7 +46,29 @@ public class ColorController: MonoBehaviour
                     break;
             }
         }
-        else
+        else if(tag == "teleporter")
+        {
+            switch (color)
+            {
+                case (Color.red):
+                    gameObject.GetComponent<Renderer>().material = red;
+                    gameObject.layer = 17;
+                    break;
+                case (Color.black):
+                    gameObject.GetComponent<Renderer>().material = black;
+                    gameObject.layer = 15;
+                    break;
+                case (Color.white):
+                    gameObject.GetComponent<Renderer>().material = white;
+                    gameObject.layer = 16;
+                    break;
+                default:
+                    gameObject.GetComponent<Renderer>().material = black;
+                    gameObject.layer = 15;
+                    break;
+            }
+        }
+        else if(tag == "winner")
         {
             switch (color)
             {
